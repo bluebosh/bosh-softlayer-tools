@@ -184,7 +184,7 @@ resources:
   type: git
   source:
     uri: git@github.com:mattcui/bosh-softlayer-tools.git
-    branch: master
+    branch: 3262.16-bluemix
     private_key: {{github_promote_private_key}}
 
 - name: bosh-stemcell-softlayer-image

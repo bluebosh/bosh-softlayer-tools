@@ -9,7 +9,7 @@
   export GOPATH=$base/Godeps/_workspace:$base_gopath:$GOPATH
 
   echo -e "\n Get stemcell version..."
-  STEMCELL_VERSION=3262.15
+  STEMCELL_VERSION=3262.16
 
   echo -e "\n Creating stemcell binary..."
   cd "${base}"

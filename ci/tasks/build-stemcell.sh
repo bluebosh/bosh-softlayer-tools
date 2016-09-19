@@ -22,7 +22,7 @@ get_ip_from_vagrant_ssh_config() {
   echo $(echo "$config" | grep HostName | awk '{print $2}')
 }
 
-build_num=3262.15
+build_num=3262.16
 
 pushd bosh-src
 
