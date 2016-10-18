@@ -4,7 +4,7 @@ set -e -x
 
 [ -f published-stemcell/version ] || exit 1
 
-published_version=$(cat published-stemcell/version)
+published_version=3263.8
 
 # check for minor (only supports x and x.x)
 if [[ "$published_version" == *.* ]]; then
