@@ -7,8 +7,4 @@ set -e -x
 published_version=3263.8.1
 
 # check for minor (only supports x and x.x)
-if [[ "$published_version" == *.* ]]; then
-	echo "${published_version}.0" > version/semver # fill in patch
-else
-	echo "${published_version}.0.0" > version/semver # fill in minor.patch
-fi
+echo "${published_version}" > version/semver
