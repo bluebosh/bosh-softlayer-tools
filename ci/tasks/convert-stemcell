@@ -5,7 +5,7 @@
 
   echo -e "\n Get stemcell version..."
 
-  STEMCELL_VERSION=3263.8
+  STEMCELL_VERSION=3263.8.1
 
   cd candidate-stemcell-ubuntu-trusty
 

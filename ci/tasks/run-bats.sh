@@ -31,7 +31,7 @@ export BAT_NETWORKING=dynamic
 export BAT_DEBUG_MODE=true
 export HYPERVISOR=${HYPERVISOR}
 
-STEMCELL_VERSION=3263.8
+STEMCELL_VERSION=3263.8.1
 
 bosh -n target $BAT_DIRECTOR
 echo Using This version of bosh:
