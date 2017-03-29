@@ -13,3 +13,6 @@ outputs:
   - name: stemcell-image
 run:
   path: gopath/src/github.com/cloudfoundry-community/bosh-softlayer-tools/ci/tasks/import-stemcell
+params:
+  SL_USERNAME:                replace-me
+  SL_API_KEY:                 replace-me
