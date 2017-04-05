@@ -26,7 +26,7 @@
   go build -o out/sl_stemcells main/stemcells/stemcells.go
 
   echo -e "\n Softlayer creating light stemcell..."
-  out/sl_stemcells -c light-stemcell --version ${stemcell_version} --stemcell-info-filename "${base_gopath}/../stemcell-info/stemcell-info.json"
+  out/sl_stemcells -c light-stemcell --version ${stemcell_version} --infrastructure "$IAAS" --stemcell-info-filename "${base_gopath}/../stemcell-info/stemcell-info.json"
 
   stemcell_filename=`ls light*.tgz`
   tar -zxvf ${stemcell_filename}
