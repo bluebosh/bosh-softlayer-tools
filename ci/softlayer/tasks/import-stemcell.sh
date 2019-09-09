@@ -1,20 +1,7 @@
 #!/bin/bash
-
-
 set -e -x
 
-echo "\n[INFO] Checking enviroment variables..."
-source bosh-softlayer-tools-master/ci/bluemix/tasks/utils.sh
-
-check_param SL_USERNAME
-check_param SL_API_KEY
-check_param SWIFT_USERNAME
-check_param SWIFT_API_KEY
-check_param SWIFT_CLUSTER
-check_param SWIFT_CONTAINER
-
 export CANDIDATE_BUILD_NUMBER=$( cat version/number | sed 's/\.0$//;s/\.0$//' )
-
 base=$( cd "$( dirname "$( dirname "$( dirname "$0" )")")" && pwd )
 
 echo -e "\n[INFO] Get stemcell vhd filename..."
@@ -27,7 +14,7 @@ chmod +x $sl_stemcells
 
 echo -e "\n[INFO] Softlayer create from external source..."
 IFS=':' read -ra OBJ_STORAGE_ACC_NAME <<< "$SWIFT_USERNAME"
-URI="swift://${OBJ_STORAGE_ACC_NAME}@${SWIFT_CLUSTER}/${SWIFT_CONTAINER}/${stemcell_vhd_filename}"
+URI="cos://${REGION}/${BUCKET}/${stemcell_vhd_filename}"
 if [ "$OS_VERSION" = "xenial" ]; then
   os_ref_code=UBUNTU_16_64
 elif [ "$OS_VERSION" = "trusty" ]; then
