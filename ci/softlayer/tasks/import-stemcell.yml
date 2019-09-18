@@ -9,7 +9,7 @@ inputs:
 - name: bosh-softlayer-tools-master
 - name: bosh-softlayer-tools
 - name: version
-- name: stemcell-cmds
+
 outputs:
 - name: stemcell-image
 
